@@ -48,10 +48,10 @@ auth_users = [
 ]
 sudo_users = auth_users
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS","1447302066").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","1654849862").split(",") if chat != ''
 ]
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS","1447302066").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","1654849862").split(",") if chat != ''
 ]
 
 keyboard = InlineKeyboardMarkup(
