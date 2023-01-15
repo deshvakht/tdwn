@@ -40,18 +40,18 @@ from addapdf import *
 
 
 bot = Client("bot",
-             bot_token=os.environ.get("BOT_TOKEN"),
-             api_id=int(os.environ.get("API_ID")),
-             api_hash=os.environ.get("API_HASH"))
+             bot_token=os.environ.get("BOT_TOKEN","5849729124:AAGl08Iq1kzQsf2_Gg1Mkxbz1KFUCDV79Qo"),
+             api_id=int(os.environ.get("API_ID","8953645")),
+             api_hash=os.environ.get("API_HASH","66b4568bd06be74c3b92ce83dfc41299"))
 auth_users = [
-    int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("AUTH_USERS","1937616968").split(",") if chat != ''
 ]
 sudo_users = auth_users
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","1447302066").split(",") if chat != ''
 ]
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","1447302066").split(",") if chat != ''
 ]
 
 keyboard = InlineKeyboardMarkup(
@@ -59,7 +59,7 @@ keyboard = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Devloper 🐲",
-                url="https://github.com/DRAGO-OWNER",
+                url="https://github.com/laudalelo",
             ),
             InlineKeyboardButton(
                 text="Repo 🛠",
@@ -84,7 +84,7 @@ async def cancel(_, m):
 @bot.on_message(
     filters.command("stop") & ~filters.edited & (filters.chat(sudo_groups)))
 async def restart_handler(_, m):
-    await m.reply_text("Restarted 😡!", True)
+    await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 def superSoup(link):
@@ -107,7 +107,7 @@ async def account_login(bot: Client, m: Message):
         return
     else:
         editable = await m.reply_text(
-            "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : DRAGO**\nLanguage** : Python**\nFramework** : 🔥 Pyrogram\n\nSend **TXT** File {Name : Link}"
+            "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : Unknown**\nLanguage** : Python**\nFramework** : 🔥 Pyrogram\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -175,7 +175,7 @@ async def account_login(bot: Client, m: Message):
                 try:
                     dll = download_adda_pdfs(name, url)
                     if dll == 0:
-                        await m.reply_document(f"{name}.pdf", caption=f'{str(count).zfill(3)}. {name}.pdf\n\n**Download By:** Group Admin')
+                        await m.reply_document(f"{name}.pdf", caption=f'{str(count).zfill(3)}. {name}.pdf\n\n')
                         count += 1
                         await prog.delete(True)
                         os.remove(f"{name}.pdf")
@@ -379,8 +379,8 @@ async def account_login(bot: Client, m: Message):
             try:
                 Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
                 prog = await m.reply_text(Show)
-                cc = f"{str(count).zfill(3)}. {name1} {res}.mkv\n\n**Batch:** {raw_text5}\n\n**Download By:** Group Admin"
-                cc1 = f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text5}\n\n**Download By:** Group Admin"
+                cc = f"{str(count).zfill(3)}. {name1} {res}.mkv\n\n**Batch:** {raw_text5}\n\n"
+                cc1 = f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text5}\n\n"
                 #                         await prog.delete (True)
                 #                 if cmd == "pdf" or "drive" in url:
                 #                     try:
@@ -411,7 +411,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(
-                            ka,caption=f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch** {raw_text5}\n\n**Download By:** Group Admin")
+                            ka,caption=f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch** {raw_text5}\n\n")
                         count += 1
                         # time.sleep(1)
                         await reply.delete(True)
