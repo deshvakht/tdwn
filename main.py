@@ -44,7 +44,7 @@ bot = Client("bot",
              api_id=int(os.environ.get("API_ID","8953645")),
              api_hash=os.environ.get("API_HASH","66b4568bd06be74c3b92ce83dfc41299"))
 auth_users = [
-    int(chat) for chat in os.environ.get("AUTH_USERS","1937616968","5130707822","5679777302").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("AUTH_USERS","1937616968,5130707822,5679777302").split(",") if chat != ''
 ]
 sudo_users = auth_users
 sudo_groups = [
