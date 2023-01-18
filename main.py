@@ -99,7 +99,7 @@ def get_va(link):
     return link
   
 @bot.on_message(
-    filters.command(["txt"]) & ~filters.edited & (filters.chat(sudo_groups)))
+    filters.command(["pyro"]) & ~filters.edited & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
@@ -411,7 +411,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)
                         start_time = time.time()
                         await m.reply_document(
-                            ka,caption=f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch** {raw_text5}\n\n")
+                            ka,caption=f"{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text5}\n\n")
                         count += 1
                         # time.sleep(1)
                         await reply.delete(True)
