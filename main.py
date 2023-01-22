@@ -41,18 +41,18 @@ from addapdf import *
 
 
 bot = Client("bot",
-             bot_token=os.environ.get("BOT_TOKEN","5849729124:AAGl08Iq1kzQsf2_Gg1Mkxbz1KFUCDV79Qo"),
-             api_id=int(os.environ.get("API_ID","8953645")),
-             api_hash=os.environ.get("API_HASH","66b4568bd06be74c3b92ce83dfc41299"))
+             bot_token=os.environ.get("BOT_TOKEN"),
+             api_id=int(os.environ.get("API_ID")),
+             api_hash=os.environ.get("API_HASH"))
 auth_users = [
     int(chat) for chat in os.environ.get("AUTH_USERS","1937616968,5130707822,5679777302").split(",") if chat != ''
 ]
 sudo_users = auth_users
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS","-1001654849862").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","1654849862").split(",") if chat != ''
 ]
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS","-1001654849862").split(",") if chat != ''
+    int(chat) for chat in os.environ.get("GROUPS","654849862").split(",") if chat != ''
 ]
 
 keyboard = InlineKeyboardMarkup(
