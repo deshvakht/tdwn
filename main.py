@@ -40,14 +40,14 @@ from addapdf import *
 
 
 bot = Client("bot",
-             bot_token=os.environ.get("BOT_TOKEN","5696138411:AAE2hRzQZeWwtBUqz6Lvt-KWyj6FBc4Y860"),
-             api_id=int(os.environ.get("API_ID","952608")),
-             api_hash=os.environ.get("API_HASH","8d8d0ad8e3d4bcd54420190f57da78ad"))
+             bot_token=os.environ.get("BOT_TOKEN","5936066423:AAFPDK0ZJUcCdT794im-HRcGDyCny4jPQWo"),
+             api_id=int(os.environ.get("API_ID","23442389")),
+             api_hash=os.environ.get("API_HASH","70490ec8a810932cb5cb7f9d6a839ee0"))
 auth_users = [
-    int(chat) for chat in os.environ.get("AUTH_USERS","818269274").split(",") if chat != '']
+    int(chat) for chat in os.environ.get("AUTH_USERS","5448647404").split(",") if chat != '']
 sudo_users = auth_users
 sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS","-1001476904215").split(",") if chat != '']
+    int(chat) for chat in os.environ.get("GROUPS","-808921320").split(",") if chat != '']
 
 keyboard = InlineKeyboardMarkup(
     [
@@ -433,7 +433,7 @@ async def account_login(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("Done")
+    await m.reply_text("🤖Done🤖")
 
 
 bot.run()
